@@ -12,9 +12,9 @@ Ext.define(
   },
   function () {
     // Ext.create("MyApp.view.demo.CustomWindow");
-    let wd = Ext.create({
-      xtype: "customwindow",
-    });
-    wd.show();
+    // let wd = Ext.create({
+    //   xtype: "customwindow",
+    // });
+    // wd.show();
   }
 );
