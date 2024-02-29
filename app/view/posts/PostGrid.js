@@ -11,7 +11,7 @@ Ext.define("MyApp.view.posts.PostGrid", {
     { dataIndex: "id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },
     { dataIndex: "body", text: "Body", flex: 2 },
-    { dataIndex: "userId", text: "User ID" },
+    { dataIndex: "userId", text: "User ID", hidden: true },
   ],
   selModel: {
     selType: "checkboxmodel",
