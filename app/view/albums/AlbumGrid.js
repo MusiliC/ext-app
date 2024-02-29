@@ -1,16 +1,17 @@
-Ext.define("MyApp.view.posts.PostGrid", {
+Ext.define("MyApp.view.albums.AlbumGrid", {
   extend: "Ext.grid.Panel",
-  xtype: "postgrid",
+  xtype: "albumgrid",
   store: {
-    type: "posts",
+    type: "albums",
   },
-  tbar:[{
-    text: "Add Post"
-  }],
+  tbar: [
+    {
+      text: "Add Album",
+    },
+  ],
   columns: [
     { dataIndex: "id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },
-    { dataIndex: "body", text: "Body", flex: 2 },
     { dataIndex: "userId", text: "User ID" },
   ],
   selModel: {

@@ -1,16 +1,18 @@
-Ext.define("MyApp.view.posts.PostGrid", {
+Ext.define("MyApp.view.todos.TodoGrid", {
   extend: "Ext.grid.Panel",
-  xtype: "postgrid",
+  xtype: "todogrid",
   store: {
-    type: "posts",
+    type: "todos",
   },
-  tbar:[{
-    text: "Add Post"
-  }],
+  tbar: [
+    {
+      text: "Add Todo",
+    },
+  ],
   columns: [
     { dataIndex: "id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },
-    { dataIndex: "body", text: "Body", flex: 2 },
+    { dataIndex: "completed", text: "Completed", flex: 1 },
     { dataIndex: "userId", text: "User ID" },
   ],
   selModel: {
@@ -22,5 +24,5 @@ Ext.define("MyApp.view.posts.PostGrid", {
     displayInfo: true,
   },
   scrollable: true,
-  height: 800,
+  height: 600,
 });
