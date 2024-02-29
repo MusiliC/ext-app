@@ -40,11 +40,11 @@ Ext.define('MyApp.view.main.Main', {
                 html: '{loremIpsum}'
             }
         },{
-            title: 'Groups',
+            title: 'Posts',
             iconCls: 'x-fa fa-users',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            items:[
+                {xtype: 'postgrid'}
+            ]
         },{
             title: 'Settings',
             iconCls: 'x-fa fa-cog',

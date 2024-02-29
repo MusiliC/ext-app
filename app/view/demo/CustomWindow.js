@@ -10,11 +10,9 @@ Ext.define(
     draggable: false,
     modal: true,
   },
-  function () {
-    // Ext.create("MyApp.view.demo.CustomWindow");
-    // let wd = Ext.create({
-    //   xtype: "customwindow",
-    // });
-    // wd.show();
-  }
+ 
 );
+
+// Ext.onReady(function() {
+//   Ext.create("MyApp.view.demo.CustomWindow");
+// });
