@@ -2,7 +2,7 @@ Ext.define(
   "MyApp.model.Comment",
   {
     extend: "Ext.data.Model",
-    require: ["MyApp.model.Post"],
+    requires: ["MyApp.model.Post"],
     fields: [
       { name: "postId", reference: "Post", type: "int" },
       "id",
@@ -16,12 +16,9 @@ Ext.define(
       reader: { type: "json" },
     },
     validators: {
-      postId: [
-          'presence',
-          { type: 'length', min: 7 },
-          { type: 'exclusion', list: ['Bender'] }
-      ]
-  }
+      postId: ["presence"],
+      name: ["presence", { type: "length", min: 7 }],
+    },
   },
   function () {
     //transverse
@@ -44,5 +41,20 @@ Ext.define(
         });
       },
     });
+
+    let comment = new MyApp.model.Comment({
+      id: 10,
+      name: "Comment",
+    });
+
+    // run some validation on the new user we just created
+    console.log("Is comment valid?", comment.isValid());
+
+    //returns 'false' as there were validation errors
+
+    var errors = comment.getValidation(),
+      error = errors.get("postId");
+
+    console.log("Error is: " + error);
   }
 );
