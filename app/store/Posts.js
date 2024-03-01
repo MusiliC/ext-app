@@ -1,7 +1,7 @@
 Ext.define("MyApp.store.Posts", {
   extend: "Ext.data.Store",
   alias: "store.posts",
-  model: "Ext.data.Model",
+  model: "MyApp.model.Post",
   require: ["MyApp.model.Post"],
   autoLoad: true,
   sorters: ["id", "title"],
