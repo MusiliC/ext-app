@@ -8,6 +8,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
   bodyPadding: 10,
   autoShow: true,
   modal: true,
+  modelValidation: true, 
   items: [
     {
       xtype: "form",

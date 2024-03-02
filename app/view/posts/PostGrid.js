@@ -5,12 +5,21 @@ Ext.define("MyApp.view.posts.PostGrid", {
   store: {
     type: "posts",
   },
-  tbar:[{
-    text: "Add Post",
-    listeners: {
-      click: 'onAddPostClicked'
-    }
-  }],
+  tbar: [
+    {
+      text: "Add Post",
+      listeners: {
+        click: "onAddPostClicked",
+      },
+    },
+
+    {
+      text: "Form fields",
+      listeners: {
+        click: "onFormFields",
+      },
+    },
+  ],
   columns: [
     { dataIndex: "id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },
