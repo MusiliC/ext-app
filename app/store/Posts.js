@@ -5,8 +5,8 @@ Ext.define("MyApp.store.Posts", {
   require: ["MyApp.model.Post"],
   autoLoad: true,
   sorters: ["id", "title"],
-  filters: {
-    property: 'userId',
-    value   : '10'
-}
+//   filters: {
+//     property: 'userId',
+//     value   : '10'
+// }
 });
