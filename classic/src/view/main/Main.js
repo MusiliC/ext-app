@@ -93,7 +93,7 @@ Ext.define("MyApp.view.main.Main", {
     {
       title: "Albums",
       iconCls: "fa-image",
-      items: [{ xtype: "albumgrid" }],
+      items: [{ xtype: "layoutabsolute" }],
     },
     {
       title: "Posts",
