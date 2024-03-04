@@ -11,7 +11,11 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
   onFormFields: function (btn, e, eOptions) {
     Ext.create({
       xtype: "formfieldsdemo",
-    });
-  
+    });  
+  },
+  onLayoutsClicked: function (btn, e, eOptions) {
+    Ext.create({
+      xtype: "borderlayout",
+    });  
   }
 });

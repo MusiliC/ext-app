@@ -9,6 +9,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
   autoShow: true,
   modal: true,
   modelValidation: true, 
+  layout: 'anchor',
   items: [
     {
       xtype: "form",
@@ -23,6 +24,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "Post ID",
           name: "postId",
           emptyText: "post id",
+          anchor    : '100%'
         },
         {
           allowBlank: false,
@@ -30,6 +32,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "User ID",
           name: "userId",
           emptyText: "user id",
+          anchor    : '90%'
         },
         {
           allowBlank: false,
@@ -37,6 +40,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "Title",
           name: "title",
           emptyText: "title",
+          anchor    : '80%'
         },
         {
           xtype     : 'textareafield',
