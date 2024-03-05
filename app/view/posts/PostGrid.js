@@ -27,7 +27,7 @@ Ext.define("MyApp.view.posts.PostGrid", {
     },
   ],
   columns: [
-    { dataIndex: "id", text: "ID" },
+    { dataIndex: "_id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },
     { dataIndex: "body", text: "Body", flex: 2 },
     { dataIndex: "userId", text: "User ID", hidden: true },
@@ -41,5 +41,5 @@ Ext.define("MyApp.view.posts.PostGrid", {
     displayInfo: true,
   },
   scrollable: true,
-  height: 800,
+  height: 600,
 });

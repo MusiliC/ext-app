@@ -1,13 +1,15 @@
 Ext.define("MyApp.model.Post", {
   extend: "Ext.data.Model",
-  idProperty: "id",
-  fields: ["id", "userId", "title", "body"],
+  idProperty: "_id",
+  fields: ["_id", "userId", "title", "body"],
   proxy: {
     // Ext.util.ObjectTemplate
     type: "rest",
-    url: "https://jsonplaceholder.typicode.com/posts",
+    url: "http://localhost:3000/posts",
     reader: {
       type: "json",
+      rootProperty:"rows",
+      totalProperty: "totalCount"
     },
   },
   

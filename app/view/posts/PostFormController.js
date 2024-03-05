@@ -18,7 +18,7 @@ Ext.define("MyApp.view.posts.PostFormController", {
         //send ajax request
         form.submit({
             method: 'POST',
-            url: "https://jsonplaceholder.typicode.com/posts",
+            url: "http://localhost:3000/posts",
             success: function (form, action) {
                 //add the record to the posts -> post grid
                 Ext.Msg.alert('Success', action.result.msg);

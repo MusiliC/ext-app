@@ -22,7 +22,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           xtype: "textfield",
           reference: "postId",
           fieldLabel: "Post ID",
-          name: "postId",
+          name: "_id",
           emptyText: "post id",
           anchor    : '100%'
         },
