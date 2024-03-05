@@ -15,7 +15,7 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
   },
   onLayoutsClicked: function (btn, e, eOptions) {
     Ext.create({
-      xtype: "borderlayout",
+      xtype: "checkoutform",
     });  
   }
 });

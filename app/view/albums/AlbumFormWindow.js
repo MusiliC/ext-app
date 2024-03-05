@@ -9,6 +9,7 @@ Ext.define("MyApp.view.albums.AlbumFormWindow", {
   items: [
     {
       xtype: "form",
+      layout: 'form',
       items: [
         {
           allowBlank: false,
