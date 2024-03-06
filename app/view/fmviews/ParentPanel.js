@@ -4,7 +4,6 @@ Ext.define("MyApp.view.fmviews.ParentPanel", {
   items: [
     {
       xtype: "usergrid",
-      height: '500'
     },
     {
       xtype: "staticdatamanagementtabpanel",

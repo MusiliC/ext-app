@@ -1,6 +1,7 @@
 Ext.define("MyApp.view.fmviews.StaticDataManagementTabPanel", {
   extend: "Ext.tab.Panel",
   xtype: "staticdatamanagementtabpanel",
+  height: 0,
   items: [
     {
       title: "Posts",
