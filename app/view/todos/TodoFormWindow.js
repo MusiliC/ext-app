@@ -20,6 +20,7 @@ Ext.define("MyApp.view.todos.TodoFormWindow", {
       xtype: "form",
       layout: "form",
       reference: "todoform",
+      jsonSubmit: true,
       defaultType: "textfield",
       items: [
         {
@@ -31,11 +32,13 @@ Ext.define("MyApp.view.todos.TodoFormWindow", {
           bind: {
             value: "{record.userId}",
           },
+          readOnly: true,
         },
         {
           allowBlank: false,
           xtype: "textfield",
           fieldLabel: "Todo ID",
+          reference: "todoIdField",
           name: "_id",
           emptyText: "todo id",
           bind: {
