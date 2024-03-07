@@ -3,4 +3,5 @@ Ext.define("MyApp.store.Todos", {
   alias: "store.todos",
   model: "MyApp.model.Todo",
   require: ["MyApp.model.Todo"],
+  //autoLoad: true
 });
