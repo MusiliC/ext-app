@@ -28,8 +28,6 @@ Ext.define("MyApp.view.users.UserGridController", {
         userId: record.get("_id"),
       },
     });
-
-    console.log(todosStore);
   },
   onShowDetails: function (btn, e, eOpts) {
     let userGrid = this.getView();
@@ -47,9 +45,32 @@ Ext.define("MyApp.view.users.UserGridController", {
     }
   },
 
+  onUserGridCellDblClick: function (
+    grid,
+    td,
+    cellIndex,
+    record,
+    tr,
+    rowIndex,
+    e,
+    eOpts
+  ) {
+    console.log(record.get("username"));
+  },
+  onUserGridCellContextMenu: function (
+    grid,
+    td,
+    cellIndex,
+    record,
+    tr,
+    rowIndex,
+    e,
+    eOpts
+  ) {},
+
   onModelBinding: function (btn, e, eOpts) {
     Ext.create({
-      xtype: 'modelbindingform'
-    })
-  }
+      xtype: "modelbindingform",
+    });
+  },
 });

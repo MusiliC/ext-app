@@ -8,7 +8,16 @@ Ext.define("MyApp.view.users.UserGrid", {
     type: "users",
   },
   height: 1200,
+  plugins: {
+    cellediting: {
+      clicksToEdit: 1,
+    },
+  },
+  selModel: {
+    selType: "checkboxmodel",
+  },
   columns: [
+    {xtype: 'rownumberer'},
     {
       dataIndex: "_id",
       text: "ID",
@@ -16,11 +25,20 @@ Ext.define("MyApp.view.users.UserGrid", {
     {
       dataIndex: "username",
       text: "Username",
+      editor: "textfield",
       flex: 2,
     },
     {
       dataIndex: "email",
       text: "Email",
+      editor: {
+        xtype: "textfield",
+        completeOnEnter: false,
+        allowBlank: false,
+      },
+      renderer: function (value) {
+        return Ext.String.format('<a href="mailto:{0}">{1}</a>', value, value);
+      },
       flex: 3,
     },
     {
@@ -35,7 +53,7 @@ Ext.define("MyApp.view.users.UserGrid", {
     },
     {
       text: "Model binding",
-      handler: "onModelBinding"
+      handler: "onModelBinding",
     },
     "->",
     {
@@ -46,15 +64,14 @@ Ext.define("MyApp.view.users.UserGrid", {
       },
     },
   ],
-  selModel: {
-    selType: "checkboxmodel",
-    mode: "SINGLE",
-  },
+ 
   bbar: {
     xtype: "pagingtoolbar",
     displayInfo: true,
   },
   listeners: {
     cellclick: "onUserGridCellClick",
+    celldblclick: "onUserGridCellDblClick",
+    cellcontextmenu: "onUserGridCellContextMenu",
   },
 });
