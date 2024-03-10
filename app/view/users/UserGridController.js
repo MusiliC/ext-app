@@ -46,4 +46,10 @@ Ext.define("MyApp.view.users.UserGridController", {
       btn.setText("Show Details");
     }
   },
+
+  onModelBinding: function (btn, e, eOpts) {
+    Ext.create({
+      xtype: 'modelbindingform'
+    })
+  }
 });

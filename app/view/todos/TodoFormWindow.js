@@ -10,6 +10,7 @@ Ext.define("MyApp.view.todos.TodoFormWindow", {
   viewModel: {
     data: {
       newTitle: null,
+      record: null
     },
   },
   bind: {
@@ -61,6 +62,14 @@ Ext.define("MyApp.view.todos.TodoFormWindow", {
           boxLabel: "completed",
           bind: {
             value: "{record.completed}",
+          },
+        },
+        {
+          xtype: "textarea",          
+          fieldLabel: "Comments",
+          name: "comments",          
+          bind: {
+            hidden: "{!record.completed}",
           },
         },
       ],
