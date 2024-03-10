@@ -67,8 +67,12 @@ Ext.define("MyApp.view.users.UserGridController", {
     e,
     eOpts
   ) {},
-
   onModelBinding: function (btn, e, eOpts) {
+    Ext.create({
+      xtype: "modelbindingform",
+    });
+  },
+  onShowGrouping: function (btn, e, eOpts) {
     Ext.create({
       xtype: "modelbindingform",
     });

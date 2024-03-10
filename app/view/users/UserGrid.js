@@ -55,6 +55,7 @@ Ext.define("MyApp.view.users.UserGrid", {
       text: "Model binding",
       handler: "onModelBinding",
     },
+ 
     "->",
     {
       text: "Show Details",
@@ -63,6 +64,7 @@ Ext.define("MyApp.view.users.UserGrid", {
         disabled: "{!usergrid.selection}",
       },
     },
+   
   ],
  
   bbar: {

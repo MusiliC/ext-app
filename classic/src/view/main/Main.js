@@ -101,11 +101,12 @@ Ext.define("MyApp.view.main.Main", {
       items: [{ xtype: "postgrid" }],
     },
     {
-      title: "Settings",
-      iconCls: "fa-cog",
-      bind: {
-        html: "{loremIpsum}",
-      },
+      title: "Groupings",
+      iconCls: "fa-database",
+      items: [{
+         xtype: "groupingparentpanel" 
+        }
+        ],
     },
   ],
 });
