@@ -2,28 +2,28 @@
  * This class is the controller for the main view for the application. It is specified as
  * the "controller" of the Main view class.
  */
-Ext.define('MyApp.view.main.MainController', {
-    extend: 'Ext.app.ViewController',
+Ext.define("MyApp.view.main.MainController", {
+  extend: "Ext.app.ViewController",
 
-    alias: 'controller.main',
+  alias: "controller.main",
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
+  onItemSelected: function (sender, record) {
+    Ext.Msg.confirm("Confirm", "Are you sure?", "onConfirm", this);
+  },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
-    },
-    onLogOut: function(){
-   // Remove the localStorage key/value
-   localStorage.removeItem('MyAppLoggedIn');
-
-   // Remove Main View
-   this.getView().destroy();
-
-   // Add the Login Window
-   Ext.widget('login');
+  onConfirm: function (choice) {
+    if (choice === "yes") {
+      //
     }
+  },
+  onLogout: function () {
+    // Remove the localStorage key/value
+    localStorage.removeItem("MyAppLoggedIn");
+
+    // Remove Main View
+    this.getView().destroy();
+
+    // Add the Login Window
+    Ext.widget("login");
+  },
 });
