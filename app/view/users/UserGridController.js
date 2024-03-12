@@ -34,12 +34,12 @@ Ext.define("MyApp.view.users.UserGridController", {
     let lowerPanel = Ext.ComponentQuery.query(
       "staticdatamanagementtabpanel"
     )[0];
-    if (userGrid.getHeight() === 1200) {
-      userGrid.setHeight(600);
-      lowerPanel.setHeight(600);
+    if (userGrid.getHeight() === 700) {
+      userGrid.setHeight(350);
+      lowerPanel.setHeight(350);
       btn.setText("Hide Details");
     } else {
-      userGrid.setHeight(1200);
+      userGrid.setHeight(700);
       lowerPanel.setHeight(0);
       btn.setText("Show Details");
     }

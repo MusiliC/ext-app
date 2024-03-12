@@ -29,21 +29,13 @@ Ext.define("MyApp.view.main.Main", {
         title: "{name}",
       },
       region: "west",
-      width:250,
+      width: 250,
       split: true,
     },
 
     {
       region: "center",
-      xtype: "tabpanel",
-      items:[{
-        title: 'Home'
-      },{
-        title: "Cee",
-        closable: true,
-
-      }]
-    
+      xtype: "mainpanel",
     },
     {
       region: "south",

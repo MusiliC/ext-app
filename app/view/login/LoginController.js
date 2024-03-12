@@ -1,23 +1,22 @@
-Ext.define('MyApp.view.login.LoginController', {
-    extend:'Ext.app.ViewController',
-    alias:'controller.login',
-    onLoginClick: function () {
-        // http://localhost:8080/api/authenticate
-        // Content - Type: application / json
-        // This would be the ideal location to verify the user's credentials via
-        // a server-side lookup. We'll just move forward for the sake of this example.
+Ext.define("MyApp.view.login.LoginController", {
+  extend: "Ext.app.ViewController",
+  alias: "controller.login",
+  onLoginClick: function () {
+    // http://localhost:8080/api/authenticate
+    // Content - Type: application / json
+    // This would be the ideal location to verify the user's credentials via
+    // a server-side lookup. We'll just move forward for the sake of this example.
 
-        // Set the localStorage value to true
-        localStorage.setItem("MyAppLoggedIn", true);
+    // Set the localStorage value to true
+    localStorage.setItem("MyAppLoggedIn", true);
 
-        // Remove Login Window
-        this.getView().destroy();
+    // Remove Login Window
+    this.getView().destroy();
 
-        // Add the main view to the viewport
-        Ext.create({
-            xtype: 'app-main'
-        })
-      
-
-    }
-})
+    // Add the main view to the viewport
+    // Ext.create({
+    //     xtype: 'app-main'
+    // })
+    Ext.widget("app-main");
+  },
+});

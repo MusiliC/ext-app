@@ -13,7 +13,7 @@ Ext.define("MyApp.store.Menu", {
             text: "Users",
             iconCls: "fa fa-users",
             className: "usergrid",
-            leaf: true,
+            leaf: true
           },
           {
             text: "Todos",
@@ -31,7 +31,8 @@ Ext.define("MyApp.store.Menu", {
             text: "Posts",
             iconCls: "fa fa-users",
             className: "postgrid",
-            leaf: true,
+           leaf: true,
+         
           },
           {
             text: "Personnel",

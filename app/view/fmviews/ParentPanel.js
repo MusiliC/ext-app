@@ -7,6 +7,7 @@ Ext.define("MyApp.view.fmviews.ParentPanel", {
     },
     {
       xtype: "staticdatamanagementtabpanel",
+      scrollable: true
     },
   ],
 });

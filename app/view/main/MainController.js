@@ -26,4 +26,23 @@ Ext.define("MyApp.view.main.MainController", {
     // Add the Login Window
     Ext.widget("login");
   },
+  getMainPanel: function () {
+    return Ext.ComponentQuery.query("mainpanel")[0];
+  },
+  onMainMenuItemClick: function (view, record, item, index, eOptions) {
+    let mainPanel = this.getMainPanel();
+    let activeTab = mainPanel.items.findBy(
+      (tab) => tab.title === record.get("text")
+    );
+    if (!activeTab &&  record.get("leaf")) {
+      //create new tab
+      activeTab = mainPanel.add({
+        closable: true,
+        xtype: record.get('className'),
+        title: record.get("text"),
+        iconCls: record.get("iconCls"),
+      });
+    }
+    mainPanel.setActiveTab(activeTab);
+  },
 });
