@@ -19,6 +19,8 @@ Ext.define("MyApp.view.main.Main", {
   ],
 
   controller: "main",
+  plugins: 'viewport',
+
   viewModel: "main",
 
   ui: "navigation",
@@ -46,6 +48,12 @@ Ext.define("MyApp.view.main.Main", {
       align: "stretch",
       overflowHandler: "none",
     },
+    items: [
+      {
+        text: "logout",
+        handler: "onLogOut"
+      }
+    ]
   },
 
   responsiveConfig: {

@@ -9,5 +9,5 @@ Ext.define("MyApp.view.summarygrouping.GroupingGrid", {
     { text: "Name", dataIndex: "name", flex: 1 },
     { text: "Seniority", dataIndex: "seniority", flex: 1 },
   ],
-  features: [{ ftype: "grouping" }],
+  features: [{ ftype: "grouping",  showSummaryRow: true}   ],
 });
