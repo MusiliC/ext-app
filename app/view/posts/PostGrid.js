@@ -7,11 +7,26 @@ Ext.define("MyApp.view.posts.PostGrid", {
     type: "posts",
   },
   tbar: [
+{
+        text: 'Add Post',
+        iconCls: 'fas fa-plus',
+        listeners: {
+            click: 'onAddPostClicked'
+        }
+    },
     {
-      text: "Add Post",
-      listeners: {
-        click: "onAddPostClicked",
-      },
+        text: 'Edit/View Post',
+        iconCls: 'fas fa-pencil-alt',
+        listeners: {
+            click: 'onEditClicked'
+        }
+    },
+    {
+        text: 'Delete Post',
+        iconCls: 'far fa-trash-alt',
+        listeners: {
+            click: 'onDeleteClicked'
+        }
     },
 
     {

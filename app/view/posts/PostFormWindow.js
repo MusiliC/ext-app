@@ -3,7 +3,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
   xtype: "postformwindow",
   controller: "postformcontroller",
   title: "Add Post",
-  height: 300,
+  height: 400,
   width: 400,
   bodyPadding: 10,
   autoShow: true,
@@ -48,6 +48,15 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           name      : 'body',
           fieldLabel: 'body',
           anchor    : '100%'
+        },
+        {
+          xtype     : 'datefield',
+          allowBlank: true,
+          grow      : true,
+          //name      : 'dob',
+          fieldLabel: 'DOB',
+          anchor    : '100%',
+          maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -18)
         },
       ],
     },
