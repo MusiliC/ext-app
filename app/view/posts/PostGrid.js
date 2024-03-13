@@ -41,6 +41,12 @@ Ext.define("MyApp.view.posts.PostGrid", {
         click: "onLayoutsClicked",
       },
     },
+    {
+      text: "Form VTypes",
+      listeners: {
+        click: "onVTypesClicked",
+      },
+    },
   ],
   columns: [
     { dataIndex: "_id", text: "ID" },

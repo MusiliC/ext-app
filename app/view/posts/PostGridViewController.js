@@ -18,6 +18,12 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
       xtype: "checkoutform",
     });
   },
+  onVTypesClicked: function (btn, e, eOptions) {
+    Ext.create({
+      xtype: "formfieldvtypevalidation",
+    });
+  },
+  
   onEditClicked: function (btn, e, eOpts) {},
   onDeleteClicked: function (btn, e, eOpts) {
 
