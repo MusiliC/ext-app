@@ -30,9 +30,7 @@ Ext.define("MyApp.view.todos.TodoFormWindow", {
           fieldLabel: "User ID",
           name: "userId",
           emptyText: "user id",
-          bind: {
-            value: "{record.userId}",
-          },
+      
           readOnly: true,
         },
         {
@@ -79,7 +77,7 @@ Ext.define("MyApp.view.todos.TodoFormWindow", {
         },
         {
           text: "Submit",
-          formBind: "true",
+          //formBind: "true",
           handler: "onSave",
         },
       ],

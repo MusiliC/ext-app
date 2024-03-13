@@ -21,12 +21,12 @@ Ext.define("MyApp.store.Menu", {
             className: "todogrid",
             leaf: true,
           },
-          {
-            text: "Albums",
-            leaf: true,
-            iconCls: "fa-image",
-            items: [{ xtype: "albumgrid" }],
-          },
+          // {
+          //   text: "Albums",
+          //   leaf: true,
+          //   iconCls: "fa-image",
+          //   items: [{ xtype: "albumgrid" }],
+          // },
         ],
       },
       {
@@ -35,7 +35,7 @@ Ext.define("MyApp.store.Menu", {
         children: [
           {
             text: "Posts",
-            iconCls: "fa fa-users",
+            iconCls: "fa-solid fa-code",
             className: "postgrid",
             leaf: true,
           },
@@ -50,18 +50,18 @@ Ext.define("MyApp.store.Menu", {
       },
       {
         text: "Grouping and Summary",
-        iconCls: "fa fa-database fa-lg",
+        iconCls: "fa-solid fa-layer-group",
         children: [
           {
             text: "Groupings",
             className: "groupinggrid",
-            iconCls: "fa fa-users",
+            iconCls: "fa-solid fa-list",
             leaf: true,
           },
           {
             text: "Summary",
             className: "summarygrid",
-            iconCls: "fa fa-users",
+            iconCls: "fa-solid fa-check",
             leaf: true,
           },
         ],

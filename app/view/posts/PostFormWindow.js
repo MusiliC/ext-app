@@ -8,13 +8,22 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
   bodyPadding: 10,
   autoShow: true,
   modal: true,
-  modelValidation: true, 
-  layout: 'anchor',
+  modelValidation: true,
+  layout: "anchor",
+  viewModel: {
+    data: {
+      newTitle: null,
+      record: null,
+    },
+  },
+  bind: {
+    title: "{newTitle}",
+  },
   items: [
     {
       xtype: "form",
       reference: "postform",
-      itemId: 'postform',
+      itemId: "postform",
       items: [
         {
           allowBlank: true,
@@ -24,7 +33,11 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "Post ID",
           name: "_id",
           emptyText: "post id",
-          anchor    : '100%'
+          anchor: "100%",
+          bind: {
+            value: "{record._id}",
+          },
+          readOnly: true,
         },
         {
           allowBlank: false,
@@ -32,7 +45,10 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "User ID",
           name: "userId",
           emptyText: "user id",
-          anchor    : '90%'
+          anchor: "90%",
+          bind: {
+            value: "{record.userId}",
+          },
         },
         {
           allowBlank: false,
@@ -40,23 +56,29 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "Title",
           name: "title",
           emptyText: "title",
-          anchor    : '80%'
+          anchor: "80%",
+          bind: {
+            value: "{record.title}",
+          },
         },
         {
-          xtype     : 'textareafield',
-          grow      : true,
-          name      : 'body',
-          fieldLabel: 'body',
-          anchor    : '100%'
+          xtype: "textareafield",
+          grow: true,
+          name: "body",
+          fieldLabel: "body",
+          anchor: "100%",
+          bind: {
+            value: "{record.body}",
+          },
         },
         {
-          xtype     : 'datefield',
+          xtype: "datefield",
           allowBlank: true,
-          grow      : true,
+          grow: true,
           //name      : 'dob',
-          fieldLabel: 'DOB',
-          anchor    : '100%',
-          maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -18)
+          fieldLabel: "DOB",
+          anchor: "100%",
+          maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -18),
         },
       ],
     },

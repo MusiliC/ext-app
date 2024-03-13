@@ -1,10 +1,14 @@
 Ext.define("MyApp.view.posts.PostGridViewController", {
   extend: "Ext.app.ViewController",
   alias: "controller.postgridviewcontroller",
-  mixin:['MyApp.mixin.GridMixin'], 
+  mixins: ["MyApp.mixin.GridMixin"],
   onAddPostClicked: function (btn, e, eOptions) {
     var wd = Ext.create({
       xtype: "postformwindow",
+      viewModel: {
+        data: {
+          newTitle: "Add new Post",        
+        }},
     });
     wd.show();
   },
@@ -23,19 +27,34 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
       xtype: "formfieldvtypevalidation",
     });
   },
-  
-  onEditClicked: function (btn, e, eOpts) {},
-  onDeleteClicked: function (btn, e, eOpts) {
 
-    let me=this;
-    let record = this.getSelectedRecordByXType('postgrid');
-    let grid = me.getView()
+  onEditClicked: function (btn, e, eOpts) {
+    let record = this.getSelectedRecordByXType("postgrid");
+
+    if (record) {
+      Ext.create({
+        xtype: "postformwindow",
+        viewModel: {
+          data: {
+            newTitle: "Update Post",
+            record: record,
+          },
+        },
+      });
+    } else {
+      Ext.Msg.alert("Cancellation", "Alright. Thank you!!!");
+    }
+  },
+  onDeleteClicked: function (btn, e, eOpts) {
+    let me = this;
+    let record = this.getSelectedRecordByXType("postgrid");
+    let grid = me.getView();
 
     // let grid = Ext.ComponentQuery.query("postgrid")[0];
     // let records = grid.getSelectionModel().getSelection();
 
     if (record) {
-      let recordId = records[0].get("_id");
+      let recordId = record.get("_id");
       Ext.Msg.confirm(
         "Delete Operation",
         `Are you sure you want to delete the post with id ${recordId}`,

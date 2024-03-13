@@ -33,4 +33,8 @@ Ext.define("MyApp.view.todos.TodoGrid", {
       },
     },
   ],
+  bbar: {
+    xtype: "pagingtoolbar",
+    displayInfo: true,
+  },
 });

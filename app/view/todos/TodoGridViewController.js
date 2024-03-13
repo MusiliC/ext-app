@@ -1,14 +1,14 @@
 Ext.define("MyApp.view.todos.TodoGridViewController", {
   extend: "Ext.app.ViewController",
   alias: "controller.todogridviewcontroller",
-  mixin: ["MyApp.mixin.GridMixin"],
+  mixins: ["MyApp.mixin.GridMixin"],
   onAddTodoClicked: function (btn, e, eOptions) {
     var wd = Ext.create({
       xtype: "todoformwindow",
       viewModel: {
         data: {
           newTitle: "Add new todo",
-          record: record,
+        
         },
       },
     });

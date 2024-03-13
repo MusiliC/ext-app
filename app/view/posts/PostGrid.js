@@ -7,26 +7,32 @@ Ext.define("MyApp.view.posts.PostGrid", {
     type: "posts",
   },
   tbar: [
-{
-        text: 'Add Post',
-        iconCls: 'fas fa-plus',
-        listeners: {
-            click: 'onAddPostClicked'
-        }
+    {
+      text: "Add Post",
+      iconCls: "fas fa-plus",
+      listeners: {
+        click: "onAddPostClicked",
+      },
     },
     {
-        text: 'Edit/View Post',
-        iconCls: 'fas fa-pencil-alt',
-        listeners: {
-            click: 'onEditClicked'
-        }
+      text: "Edit/View Post",
+      iconCls: "fas fa-pencil-alt",
+      listeners: {
+        click: "onEditClicked",
+      },
+      bind: {
+        disabled: "{!postgrid.selection}",
+      },
     },
     {
-        text: 'Delete Post',
-        iconCls: 'far fa-trash-alt',
-        listeners: {
-            click: 'onDeleteClicked'
-        }
+      text: "Delete Post",
+      iconCls: "far fa-trash-alt",
+      listeners: {
+        click: "onDeleteClicked",
+      },
+      bind: {
+        disabled: "{!postgrid.selection}",
+      },
     },
 
     {
@@ -63,5 +69,4 @@ Ext.define("MyApp.view.posts.PostGrid", {
     displayInfo: true,
   },
   scrollable: true,
- 
 });
