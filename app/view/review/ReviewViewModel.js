@@ -7,7 +7,7 @@ Ext.define("MyApp.view.review.ReviewViewModel",{
             model: 'MyApp.model.Post',
             autoLoad: true
         },
-        users: {
+        dummyUsers: {
             model: 'MyApp.model.User',
             autoLoad: true
         }

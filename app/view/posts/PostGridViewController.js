@@ -7,8 +7,9 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
       xtype: "postformwindow",
       viewModel: {
         data: {
-          newTitle: "Add new Post",        
-        }},
+          newTitle: "Add new Post",
+        },
+      },
     });
     wd.show();
   },
@@ -45,6 +46,21 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
       Ext.Msg.alert("Cancellation", "Alright. Thank you!!!");
     }
   },
+  onSearchKeyValueChange: function (view, newValue, oldValue, eOpts) {
+    let me = this,
+      v = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences();
+
+    let store = v.getStore();
+
+    store.reload({
+      params: {
+        userId: newValue,
+      },
+    });
+  },
+
   onDeleteClicked: function (btn, e, eOpts) {
     let me = this;
     let record = this.getSelectedRecordByXType("postgrid");

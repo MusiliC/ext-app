@@ -1,6 +1,7 @@
 Ext.define("MyApp.view.login.LoginController", {
   extend: "Ext.app.ViewController",
   alias: "controller.login",
+  init: function(){},
   onLoginClick: function () {
     // http://localhost:8080/api/authenticate
     // Content - Type: application / json
@@ -19,4 +20,5 @@ Ext.define("MyApp.view.login.LoginController", {
     // })
     Ext.widget("app-main");
   },
+
 });

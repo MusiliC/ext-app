@@ -15,6 +15,13 @@ Ext.define("MyApp.view.posts.PostGrid", {
       },
     },
     {
+      fieldLabel: "Search",
+      xtype: "textfield",
+      listeners: {
+        change: "onSearchKeyValueChange",
+      },
+    },
+    {
       text: "Edit/View Post",
       iconCls: "fas fa-pencil-alt",
       listeners: {

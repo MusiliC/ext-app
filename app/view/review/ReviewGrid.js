@@ -4,7 +4,23 @@ Ext.define("MyApp.view.review.ReviewGrid", {
   controller: "reviewpanelcontroller",
   requires: ["MyApp.util.Util"],
   // store:
-  bind: "{users}",
+  bind: "{dummyUsers}",
+  tbar: [
+    {
+      text: "Add user",
+    },
+    {
+      fieldLabel: "Search",
+      xtype: "textfield",
+      listeners: {
+        change: "onSearchKeyValueChange",
+      },
+    },
+    {
+      xtype: "datefield",
+      emptyText: "StartDate",
+    },
+  ],
   columns: [
     { xtype: "rownumberer" },
     {
