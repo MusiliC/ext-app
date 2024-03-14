@@ -49,6 +49,20 @@ Ext.define("MyApp.store.Menu", {
         ],
       },
       {
+        text: "Review Panel",
+        iconCls: "fa fa-database fa-lg",
+        children: [
+          {
+            text: "Review Panel",
+            iconCls: "fa-solid fa-code",
+            className: "reviewpanel",
+            leaf: true,
+          },
+         
+          
+        ],
+      },
+      {
         text: "Grouping and Summary",
         iconCls: "fa-solid fa-layer-group",
         children: [
