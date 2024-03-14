@@ -7,6 +7,21 @@ Ext.define("MyApp.view.main.MainController", {
 
   alias: "controller.main",
 
+  routes: {
+    home: "onHomeRoute",
+  },
+
+  onHomeRoute: function () {
+    let mainPanel = this.getMainPanel();
+    if (mainPanel) {
+      mainPanel.setActiveTab(0);
+    }
+  },
+
+  onMainMenuItemClick: function (view, record, item, index, e, eOpts) {
+    this.redirectTo(record.get("className"));
+  },
+
   onItemSelected: function (sender, record) {
     Ext.Msg.confirm("Confirm", "Are you sure?", "onConfirm", this);
   },
@@ -34,11 +49,11 @@ Ext.define("MyApp.view.main.MainController", {
     let activeTab = mainPanel.items.findBy(
       (tab) => tab.title === record.get("text")
     );
-    if (!activeTab &&  record.get("leaf")) {
+    if (!activeTab && record.get("leaf")) {
       //create new tab
       activeTab = mainPanel.add({
         closable: true,
-        xtype: record.get('className'),
+        xtype: record.get("className"),
         title: record.get("text"),
         iconCls: record.get("iconCls"),
       });

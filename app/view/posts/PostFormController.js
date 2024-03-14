@@ -14,6 +14,8 @@ Ext.define("MyApp.view.posts.PostFormController", {
     let ref = window.getReferences();
     let form = ref["postform"].getForm();
 
+
+
     if (form.isValid()) {
       //send ajax request
       form.submit({

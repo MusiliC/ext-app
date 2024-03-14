@@ -45,7 +45,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "User ID",
           name: "userId",
           emptyText: "user id",
-          anchor: "90%",
+          anchor: "100%",
           bind: {
             value: "{record.userId}",
           },
@@ -56,7 +56,7 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
           fieldLabel: "Title",
           name: "title",
           emptyText: "title",
-          anchor: "80%",
+          anchor: "100%",
           bind: {
             value: "{record.title}",
           },
@@ -71,20 +71,20 @@ Ext.define("MyApp.view.posts.PostFormWindow", {
             value: "{record.body}",
           },
         },
-        {
-          xtype: "datefield",
-          allowBlank: true,
-          grow: true,
-          //name      : 'dob',
-          fieldLabel: "DOB",
-          anchor: "100%",
-          maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -18),
-        },
+        // {
+        //   xtype: "datefield",
+        //   allowBlank: true,
+        //   grow: true,
+        //   //name      : 'dob',
+        //   fieldLabel: "DOB",
+        //   anchor: "100%",
+        //   maxValue: Ext.Date.add(new Date(), Ext.Date.YEAR, -18),
+        // },
       ],
     },
   ],
   buttons: [
-    { text: "Save", handler: "onSaveClick" },
+    { text: "Save", formBind: true, handler: "onSaveClick" },
     { text: "Clear", handler: "onClearClick" },
   ],
 });

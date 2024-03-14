@@ -10,6 +10,28 @@ Ext.define("MyApp.Application", {
     },
   },
 
+  defaultToken: "home",
+  listen: {
+    global: {
+      unmatchedroute: "onUnmatchedRoute",
+    },
+  },
+  onUnmatchedRoute: function (token) {
+    Ext.Msg.show({
+      title: "Failure",
+      msg: "Unknown path: /" + token,
+      buttons: Ext.Msg.OK,
+      icon: Ext.Msg.ERROR,
+    });
+  },
+
+  onHomeRoute: function () {
+    let mainPanel = this.getMainPanel();
+    if (mainPanel) {
+      mainPanel.setActiveTab(0);
+    }
+  },
+
   onAppUpdate: function () {
     Ext.Msg.confirm(
       "Application Update",
