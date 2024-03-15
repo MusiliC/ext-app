@@ -2,6 +2,9 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
   extend: "Ext.app.ViewController",
   alias: "controller.postgridviewcontroller",
   mixins: ["MyApp.mixin.GridMixin"],
+  init: function () {
+    Ext.getStore('users').load();
+  },
   onAddPostClicked: function (btn, e, eOptions) {
     var wd = Ext.create({
       xtype: "postformwindow",
@@ -97,5 +100,25 @@ Ext.define("MyApp.view.posts.PostGridViewController", {
         }
       );
     }
+  },
+  onUserSelectionChange: function (combo, newValue, oldValue, eOpts) {
+    this.onFilterPosts(newValue);
+  },
+  onUserSelected: function (combo, record, eOPts) {
+    this.onFilterPosts(combo.getValue());
+  },
+  onFilterPosts: function (newValue) {
+    let me = this,
+      v = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences();
+
+    let store = v.getStore();
+
+    store.reload({
+      params: {
+        userId: newValue,
+      },
+    });
   },
 });

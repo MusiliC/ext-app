@@ -7,6 +7,28 @@ Ext.define("MyApp.view.review.ReviewGrid", {
   bind: "{dummyUsers}",
   tbar: [
     {
+      text: 'Operations',
+      menu:[
+        {
+            text:'Add new User',
+            handler:function(){
+                
+            }
+        },
+        {
+            text: 'Add new User'
+        },
+        {
+            text: 'Add new User',
+            menu:[
+                {
+                 text:'Nested Sub Menu'
+                }
+            ]
+        }
+    ]
+    },
+    {
       text: "Add user",
     },
     {

@@ -22,6 +22,21 @@ Ext.define("MyApp.view.posts.PostGrid", {
       },
     },
     {
+      fieldLabel: "Choose User",
+      xtype: "combo",
+
+      store: {
+        type: "users",
+      },
+      queryMode: "local",
+      displayField: "username",
+      valueField: "_id",
+      listeners: {
+        change: "onUserSelectionChange",
+        select: "onUserSelected",
+      },
+    },
+    {
       text: "Edit/View Post",
       iconCls: "fas fa-pencil-alt",
       listeners: {
