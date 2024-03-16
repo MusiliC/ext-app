@@ -3,7 +3,7 @@ Ext.define("MyApp.view.users.UserGrid", {
   xtype: "usergrid",
   reference: "usergrid",
   controller: "usergridcontroller",
-  title: "Users",
+
   store: {
     type: "users",
   },
@@ -17,7 +17,7 @@ Ext.define("MyApp.view.users.UserGrid", {
     selType: "checkboxmodel",
   },
   columns: [
-    {xtype: 'rownumberer'},
+    { xtype: "rownumberer" },
     {
       dataIndex: "_id",
       text: "ID",
@@ -55,7 +55,7 @@ Ext.define("MyApp.view.users.UserGrid", {
       text: "Model binding",
       handler: "onModelBinding",
     },
- 
+
     "->",
     {
       text: "Show Details",
@@ -64,9 +64,8 @@ Ext.define("MyApp.view.users.UserGrid", {
         disabled: "{!usergrid.selection}",
       },
     },
-   
   ],
- 
+
   bbar: {
     xtype: "pagingtoolbar",
     displayInfo: true,
