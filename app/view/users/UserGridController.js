@@ -16,30 +16,21 @@ Ext.define("MyApp.view.users.UserGridController", {
     e,
     eOpts
   ) {
-    let postsStore = Ext.ComponentQuery.query("postgrid")[0].getStore();
-    let todosStore = Ext.ComponentQuery.query("todogrid")[0].getStore();
-    postsStore.reload({
-      params: {
-        userId: record.get("_id"),
-      },
-    });
-    todosStore.reload({
-      params: {
-        userId: record.get("_id"),
-      },
-    });
+    let me = this,
+      view = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences();
+    vm.set("record", record);
   },
   onShowDetails: function (btn, e, eOpts) {
     let userGrid = this.getView();
-    let lowerPanel = Ext.ComponentQuery.query(
-      "staticdatamanagementtabpanel"
-    )[0];
-    if (userGrid.getHeight() === 700) {
-      userGrid.setHeight(350);
-      lowerPanel.setHeight(350);
+    let lowerPanel = Ext.ComponentQuery.query("userdetailstab")[0];
+    if (userGrid.getHeight() === 600) {
+      userGrid.setHeight(300);
+      lowerPanel.setHeight(300);
       btn.setText("Hide Details");
     } else {
-      userGrid.setHeight(700);
+      userGrid.setHeight(600);
       lowerPanel.setHeight(0);
       btn.setText("Show Details");
     }
@@ -55,7 +46,7 @@ Ext.define("MyApp.view.users.UserGridController", {
     e,
     eOpts
   ) {
-    console.log(record.get("username"));
+    record.get("username");
   },
   onUserGridCellContextMenu: function (
     grid,
@@ -76,5 +67,14 @@ Ext.define("MyApp.view.users.UserGridController", {
     Ext.create({
       xtype: "modelbindingform",
     });
+  },
+  onSelectUser: function (id) {
+    let me = this,
+      grid = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences();
+    let record = grid.getStore().findRecord("_id", id);
+    vm.set("record", record);
+    grid.getSelectionModel().select(record);
   },
 });

@@ -13,6 +13,20 @@ Ext.define("MyApp.view.main.MainController", {
       action: "onRoute",
       before: "onBeforeRoute",
     },
+    "users/:id": {
+      action: "onUserSelect",
+      before: "onBeforeUserSelect",
+      conditions: {
+        ":id": "([0-9]+)",
+      },
+    },
+    // "posts/:id": {
+    //   action: "onPostSelect",
+    //   before: "onBeforePostSelect",
+    //   conditions: {
+    //     ":id": "([0-9]+)",
+    //   },
+    // },
   },
 
   onHomeRoute: function () {
@@ -27,6 +41,34 @@ Ext.define("MyApp.view.main.MainController", {
       hash = Ext.util.History.getToken(),
       mainmenu = this.getMainMenu();
     me.locateMainMenuItem(mainmenu, hash);
+  },
+
+  //! user select
+  onUserSelect: function (id) {
+    //fire an event to select the record on the user grid
+    this.getUserGrid().fireEvent("selectuser", id);
+    //console.log(id);
+  },
+
+  onBeforeUserSelect: function (id, action) {
+    var me = this,
+      hash = "users",
+      mainMenu = me.getMainMenu();
+    me.locateMainMenuItem(mainMenu, hash);
+
+    //get reference to grid
+    let grid = this.getUserGrid();
+
+    //get store
+    let store = grid.getStore();
+    //find record with the id
+    let record = store.findRecord("_id", id);
+
+    if (record) {
+      action.resume();
+    } else {
+      action.stop();
+    }
   },
 
   locateMainMenuItem: function (mainMenu, className) {
@@ -82,6 +124,13 @@ Ext.define("MyApp.view.main.MainController", {
 
     // Add the Login Window
     Ext.widget("login");
+  },
+
+  getMainPanel: function () {
+    return Ext.ComponentQuery.query("mainpanel")[0];
+  },
+  getUserGrid: function () {
+    return Ext.ComponentQuery.query("usergrid")[0];
   },
   getMainPanel: function () {
     return Ext.ComponentQuery.query("mainpanel")[0];
