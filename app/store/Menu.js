@@ -18,7 +18,7 @@ Ext.define("MyApp.store.Menu", {
           {
             text: "Todos",
             iconCls: "fas fa-user-secret",
-            className: "todogrid",
+            className: "todos",
             leaf: true,
           },
           // {
@@ -36,16 +36,9 @@ Ext.define("MyApp.store.Menu", {
           {
             text: "Posts",
             iconCls: "fa-solid fa-code",
-            className: "postgrid",
+            className: "posts",
             leaf: true,
           },
-          {
-            text: "Personnel",
-            iconCls: "fa fa-users",
-            leaf: true,
-            className: "mainlist",
-          },
-          
         ],
       },
       {
@@ -58,8 +51,6 @@ Ext.define("MyApp.store.Menu", {
             className: "reviewpanel",
             leaf: true,
           },
-         
-          
         ],
       },
       {
@@ -68,7 +59,7 @@ Ext.define("MyApp.store.Menu", {
         children: [
           {
             text: "Groupings",
-            className: "groupinggrid",
+            className: "grouping",
             iconCls: "fa-solid fa-list",
             leaf: true,
           },
