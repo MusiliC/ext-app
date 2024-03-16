@@ -48,5 +48,10 @@ Ext.define("MyApp.form.field.VTypes", {
         return true;
     },
 
-    passwordText: 'Passwords do not match'
+    passwordText: 'Passwords do not match',
+
+    customPass: function (val, field) {
+        return /^.{6,}$/.test(val);
+    },
+    customPassText: 'Not a valid password. Length must be at least 6 characters.'
 })

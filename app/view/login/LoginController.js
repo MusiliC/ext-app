@@ -1,7 +1,23 @@
 Ext.define("MyApp.view.login.LoginController", {
   extend: "Ext.app.ViewController",
   alias: "controller.login",
-  init: function(){},
+  init: function () {
+    let me = this,
+      view = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences(),
+      button = refs["lng-btn"];
+
+    var lang = localStorage ? localStorage.getItem("user-lang") || "en" : "en";
+    button.setIconCls(lang);
+    if (lang == "en") {
+      button.setText("English");
+    } else if (lang == "es") {
+      button.setText("Español");
+    } else {
+      button.setText("France");
+    }
+  },
   onLoginClick: function () {
     // http://localhost:8080/api/authenticate
     // Content - Type: application / json
@@ -10,7 +26,7 @@ Ext.define("MyApp.view.login.LoginController", {
 
     // Set the localStorage value to true
     localStorage.setItem("MyAppLoggedIn", true);
-    localStorage.setItem("hasAccessToUsers", true)
+    localStorage.setItem("hasAccessToUsers", true);
 
     // Remove Login Window
     this.getView().destroy();
@@ -22,4 +38,9 @@ Ext.define("MyApp.view.login.LoginController", {
     Ext.widget("app-main");
   },
 
+  onMenuItemClick: function (item, e, options) {
+    var menu = this.getView();
+    localStorage.setItem("user-lang", item.iconCls);
+    window.location.reload();
+  },
 });

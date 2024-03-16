@@ -9,7 +9,7 @@ Ext.define("MyApp.view.main.MainController", {
 
   routes: {
     home: "onHomeRoute",
-    "users|reviewpanel|posts|todos|summary|grouping": {
+    "users|reviewpanel|posts|todos|summary|grouping|albums": {
       action: "onRoute",
       before: "onBeforeRoute",
     },

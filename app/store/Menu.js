@@ -39,6 +39,12 @@ Ext.define("MyApp.store.Menu", {
             className: "posts",
             leaf: true,
           },
+          {
+            text: "Albums",
+            iconCls: "fa-image",
+            className: "albums",
+            leaf: true,
+          },
         ],
       },
       {
