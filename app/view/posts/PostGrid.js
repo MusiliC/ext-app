@@ -6,76 +6,82 @@ Ext.define("MyApp.view.posts.PostGrid", {
   store: {
     type: "posts",
   },
-  tbar: [
-    {
-      text: "Add Post",
-      iconCls: "fas fa-plus",
-      listeners: {
-        click: "onAddPostClicked",
+  tbar: 
+  {
+    overflowHandler: 'menu',
+    items: 
+    [
+      {
+        text: "Add Post",
+        iconCls: "fas fa-plus",
+        listeners: {
+          click: "onAddPostClicked",
+        },
       },
-    },
-    {
-      fieldLabel: "Search",
-      xtype: "textfield",
-      listeners: {
-        change: "onSearchKeyValueChange",
+      {
+        fieldLabel: "Search",
+        xtype: "textfield",
+        listeners: {
+          change: "onSearchKeyValueChange",
+        },
       },
-    },
-    {
-      fieldLabel: "Choose User",
-      xtype: "combo",
-
-      store: {
-        type: "users",
+      {
+        fieldLabel: "Choose User",
+        xtype: "combo",
+  
+        store: {
+          type: "users",
+        },
+        queryMode: "local",
+        displayField: "username",
+        valueField: "_id",
+        listeners: {
+          change: "onUserSelectionChange",
+          select: "onUserSelected",
+        },
       },
-      queryMode: "local",
-      displayField: "username",
-      valueField: "_id",
-      listeners: {
-        change: "onUserSelectionChange",
-        select: "onUserSelected",
+      {
+        text: "Edit/View Post",
+        iconCls: "fas fa-pencil-alt",
+        listeners: {
+          click: "onEditClicked",
+        },
+        bind: {
+          disabled: "{!postgrid.selection}",
+        },
       },
-    },
-    {
-      text: "Edit/View Post",
-      iconCls: "fas fa-pencil-alt",
-      listeners: {
-        click: "onEditClicked",
+      {
+        text: "Delete Post",
+        iconCls: "far fa-trash-alt",
+        listeners: {
+          click: "onDeleteClicked",
+        },
+        bind: {
+          disabled: "{!postgrid.selection}",
+        },
       },
-      bind: {
-        disabled: "{!postgrid.selection}",
+  
+      {
+        text: "Form fields",
+        listeners: {
+          click: "onFormFields",
+        },
       },
-    },
-    {
-      text: "Delete Post",
-      iconCls: "far fa-trash-alt",
-      listeners: {
-        click: "onDeleteClicked",
+      {
+        text: "Layouts",
+        listeners: {
+          click: "onLayoutsClicked",
+        },
       },
-      bind: {
-        disabled: "{!postgrid.selection}",
+      {
+        text: "Form VTypes",
+        listeners: {
+          click: "onVTypesClicked",
+        },
       },
-    },
-
-    {
-      text: "Form fields",
-      listeners: {
-        click: "onFormFields",
-      },
-    },
-    {
-      text: "Layouts",
-      listeners: {
-        click: "onLayoutsClicked",
-      },
-    },
-    {
-      text: "Form VTypes",
-      listeners: {
-        click: "onVTypesClicked",
-      },
-    },
-  ],
+    ],
+  },
+ 
   columns: [
     { dataIndex: "_id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },
