@@ -1,0 +1,51 @@
+{
+  "totalCount": 4,
+  "rows": [
+    {
+      "date": "1/9/2020",
+      "particular": [
+        {
+          "debitname": "cash",
+          "debitamount": 2000000
+        },
+        {
+          "creditname": "capital",
+          "creditamount": 2000000
+        }
+      ],
+
+      "name": "Being record of initial capital"
+    },
+    {
+      "date": "2/9/2020",
+      "particular": [
+        {
+          "debitname": "Suppliers a/c",
+          "debitamount": 30000
+        },
+        {
+          "creditname": "Cash a/c",
+          "creditamount": 30000
+        }
+      ],
+
+      "name": "Being record of supplies"
+    },
+    {
+      "date": "3/9/2020",
+      "particular": [
+        {
+          "debitname": "Rent Expense a/c",
+          "debitamount": 100000
+        },
+        {
+          "creditname": "Rent deposit a/c",
+          "creditamount": 100000
+        }
+      ],
+
+      "name": "Being record of rent expense and rent deposit"
+    }
+  ],
+  "success": true
+}
