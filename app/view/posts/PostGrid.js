@@ -2,20 +2,26 @@ Ext.define("MyApp.view.posts.PostGrid", {
   extend: "Ext.grid.Panel",
   xtype: "postgrid",
   reference: "postgrid",
+  height: 400,
   controller: "postgridviewcontroller",
   store: {
     type: "posts",
   },
-  tbar: 
-  {
-    overflowHandler: 'menu',
-    items: 
-    [
+  tbar: {
+    overflowHandler: "menu",
+    items: [
       {
         text: "Add Post",
         iconCls: "fas fa-plus",
         listeners: {
           click: "onAddPostClicked",
+        },
+      },
+      {
+        text: "Show Details",
+        handler: "onShowDetails",
+        bind: {
+          disabled: "{!postgrid.selection}",
         },
       },
       {
@@ -28,7 +34,7 @@ Ext.define("MyApp.view.posts.PostGrid", {
       {
         fieldLabel: "Choose User",
         xtype: "combo",
-  
+
         store: {
           type: "users",
         },
@@ -60,7 +66,7 @@ Ext.define("MyApp.view.posts.PostGrid", {
           disabled: "{!postgrid.selection}",
         },
       },
-  
+
       {
         text: "Form fields",
         listeners: {
@@ -81,12 +87,17 @@ Ext.define("MyApp.view.posts.PostGrid", {
       },
     ],
   },
- 
+
   columns: [
     { dataIndex: "_id", text: "ID" },
-    { dataIndex: "title", text: "Title", flex: 1 },
-    { dataIndex: "body", text: "Body", flex: 2 },
-    { dataIndex: "userId", text: "User ID", hidden: false },
+    { dataIndex: "title", text: "Title", editor: "textfield", flex: 1 },
+    { dataIndex: "body", text: "Body", editor: "textfield", flex: 2 },
+    {
+      dataIndex: "userId",
+      text: "User ID",
+      editor: "textfield",
+      hidden: false,
+    },
   ],
   selModel: {
     selType: "checkboxmodel",
@@ -96,5 +107,10 @@ Ext.define("MyApp.view.posts.PostGrid", {
     xtype: "pagingtoolbar",
     displayInfo: true,
   },
+  listeners: {
+    cellClick: "onPostGridCellClick",
+    selectpost: "onSelectPost",
+  },
+
   scrollable: true,
 });

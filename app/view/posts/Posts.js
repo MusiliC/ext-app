@@ -11,8 +11,8 @@ Ext.define("MyApp.view.posts.Posts", {
     {
       xtype: "postgrid",
     },
-    //   {
-    //     xtype: "userdetailstab",
-    //   },
+      {
+        xtype: "postdetailstab",
+      },
   ],
 });

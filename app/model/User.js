@@ -14,12 +14,11 @@ Ext.define("MyApp.model.User",{
     ],
     proxy:{
         type:'rest',
-        url: 'resources/user-order.json',
+        url: 'resources/users.json',
         reader:{
             type:'json',
             rootProperty:'rows',
             totalProperty:'totalCount'
         }
     },
-    hasMany: 'MyApp.model.Order'
 })

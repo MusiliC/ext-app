@@ -5,5 +5,5 @@ Ext.define("MyApp.store.Posts", {
   require: ["MyApp.model.Post"], 
   sorters: ["id", "title"],
   pageSize: 25,
-  //autoLoad: true
+  autoLoad: true
 });
