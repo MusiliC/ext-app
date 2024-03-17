@@ -18,31 +18,37 @@ Ext.define("MyApp.view.login.Login", {
     },
     items: [
       {
-        xtype: "textfield",
-        name: "username",
-        fieldLabel: translations.user,
-        allowBlank: false,
+        xtype: "form",
+        reference: "loginform",
+        itemId: "loginform",
+        items: [
+          {
+            xtype: "textfield",
+            name: "email",
+            fieldLabel: translations.user,
+            allowBlank: false,
+          },
+          {
+            xtype: "textfield",
+            name: "password",
+            inputType: "password",
+            fieldLabel: translations.password,
+            vtype: "customPass",
+            allowBlank: false,
+          },
+          {
+            xtype: "displayfield",
+            afterLabelTextTpl: "",
+            hideEmptyLabel: false,
+            value: "Enter any non-blank password",
+          },
+          //   {
+          //     xtype:'datefield',
+          //     fieldLabel:'Date'
+          // },
+        ],
       },
-      {
-        xtype: "textfield",
-        name: "password",
-        inputType: "password",
-        fieldLabel: translations.password,
-        vtype: "customPass",
-        allowBlank: false,
-      },
-      {
-        xtype: "displayfield",
-        afterLabelTextTpl: "",
-        hideEmptyLabel: false,
-        value: "Enter any non-blank password",
-      },
-      {
-        xtype:'datefield',
-        fieldLabel:'Date'
-    },
     ],
-    
   },
 
   buttons: [
@@ -77,7 +83,7 @@ Ext.define("MyApp.view.login.Login", {
       },
     },
     "->",
-    
+
     {
       text: translations.login,
       formBind: true,

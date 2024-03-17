@@ -146,6 +146,7 @@ Ext.define("MyApp.view.main.MainController", {
   onLogout: function () {
     // Remove the localStorage key/value
     localStorage.removeItem("MyAppLoggedIn");
+    localStorage.clear("hasAccessToUsers");
 
     // Remove Main View
     this.getView().destroy();
